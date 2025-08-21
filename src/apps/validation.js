@@ -258,13 +258,13 @@ class ReverseVisibilityValidationMenu extends VisibilityValidationMenu {
                 if (original?.visibility === data.visibility) continue;
 
                 if (!original.cover && !data.visibility) {
-                    update[`flags.${MODULE_ID}.data.-=${thisId}`] = true;
+                    update[`flags.${MODULE_ID}.data.-=${thisId}`] = null;
                 } else if (!data.visibility) {
-                    update[`flags.${MODULE_ID}.data.${thisId}.-=visibility`] = true;
+                    update[`flags.${MODULE_ID}.data.${thisId}.-=visibility`] = null;
                 } else {
                     update[`flags.${MODULE_ID}.data.${thisId}.visibility`] = data.visibility;
                 }
-            } else update[`flags.${MODULE_ID}.data.-=${thisId}`] = true;
+            } else update[`flags.${MODULE_ID}.data.-=${thisId}`] = null;
 
             updates.push(update);
         }

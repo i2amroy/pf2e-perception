@@ -55,7 +55,7 @@ export async function setTokenData(token, data) {
 
     for (const tokenId in data) {
         if (!valid.includes(tokenId)) {
-            updates[`flags.${MODULE_ID}.data.-=${tokenId}`] = true;
+            updates[`flags.${MODULE_ID}.data.-=${tokenId}`] = null;
             continue;
         }
 
@@ -69,12 +69,12 @@ export async function setTokenData(token, data) {
             continue;
 
         if (!current.visibility && !current.cover) {
-            updates[`flags.${MODULE_ID}.data.-=${tokenId}`] = true;
+            updates[`flags.${MODULE_ID}.data.-=${tokenId}`] = null;
         } else {
             for (const property of ["cover", "visibility"]) {
                 if (original[property] === current[property]) continue;
                 if (!current[property])
-                    updates[`flags.${MODULE_ID}.data.${tokenId}.-=${property}`] = true;
+                    updates[`flags.${MODULE_ID}.data.${tokenId}.-=${property}`] = null;
                 else updates[`flags.${MODULE_ID}.data.${tokenId}.${property}`] = current[property];
             }
         }
