@@ -1,3 +1,8 @@
+# 0.44.0
+
+-   forked from original repository, it now works in foundry `v13` though things are a little offset
+-   i don't feel like fixing the styling so things aren't offset and janky. it works
+
 # 0.43.0
 
 -   expose new `check.getFlatCheckDc` function to the API
