@@ -1,7 +1,8 @@
-# 0.44.0
+# 0.43.1
 
--   forked from original repository, it now works in foundry `v13` though things are a little offset
--   i don't feel like fixing the styling so things aren't offset and janky. it works
+-   Updated to work in foundry `v13`
+    -   fixed html function wrapping error
+    -   fixed being unable remove concealment/cover
 
 # 0.43.0
 
